@@ -33,12 +33,12 @@ $factory->define(CodeProject\Entities\Client::class, function (Faker\Generator $
 
 $factory->define(CodeProject\Entities\Project::class, function (Faker\Generator $faker) {
     return [
-        'owner_id' => 1,
-        'client_id' => 1,
-        'name' => $faker->name,
+        'owner_id' => rand(1,10),
+        'client_id' => rand(1,10),
+        'name' => $faker->word,
         'description' => $faker->sentence,
-        'progress' => 1,
-        'status' => 1,
-        'due_date' => date("Y-m-d")
+        'progress' => rand(1,100),
+        'status' => rand(1,3),
+        'due_date' => $faker->datetime('now')
     ];
 });
